@@ -200,9 +200,17 @@ This frontend is useless without the backend running. Clone and start the API fi
 git clone https://github.com/HectorCeballos/todo-api.git
 cd todo-api
 npm install
-echo "PORT=3000" > .env
-echo "JWT_SECRET=your_secret_key_here" >> .env
-npm run seed  # optional sample data
+```
+
+Then create a `.env` file in the root of the project manually and add these two lines:
+```
+PORT=3000
+JWT_SECRET=your_secret_key_here
+```
+
+Replace `your_secret_key_here` with any long random string of your choice. Keep it secret and never share it — it's used to sign authentication tokens.
+```bash
+npm run seed  # optional — adds sample tasks
 npm run dev
 ```
 
