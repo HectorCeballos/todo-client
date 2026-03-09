@@ -189,23 +189,38 @@ function logout() {
 
 ### Prerequisites
 
-- The `todo-api` backend must be running on `http://localhost:3000`
 - A modern web browser
+- Git installed
+- The `todo-api` backend cloned and running
 
-### Setup
+### Step 1 — Set up the API first
 
+This frontend is useless without the backend running. Clone and start the API first:
 ```bash
-# Clone the repository
+git clone https://github.com/HectorCeballos/todo-api.git
+cd todo-api
+npm install
+echo "PORT=3000" > .env
+echo "JWT_SECRET=your_secret_key_here" >> .env
+npm run seed  # optional sample data
+npm run dev
+```
+
+Leave that terminal running. The API must stay running while you use the frontend.
+
+### Step 2 — Set up the frontend
+
+Open a new terminal window:
+```bash
 git clone https://github.com/HectorCeballos/todo-client.git
 cd todo-client
 ```
 
-Open `index.html` directly in your browser. No build step, no server needed for the frontend itself.
+Open `index.html` directly in your browser. No build step or install needed.
 
 ### Connecting to the API
 
 The API base URL is defined at the top of `app.js`:
-
 ```javascript
 const API_URL = 'http://localhost:3000';
 ```
