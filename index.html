@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todo App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Auth Section -->
+  <div id="auth-section">
+    <div class="auth-container">
+      <h1>Todo App</h1>
+
+      <div class="tabs">
+        <button class="tab active" onclick="showTab('login')">Login</button>
+        <button class="tab" onclick="showTab('register')">Register</button>
+      </div>
+
+      <div id="login-form">
+        <input type="email" id="login-email" placeholder="Email" />
+        <input type="password" id="login-password" placeholder="Password" />
+        <button onclick="login()">Login</button>
+      </div>
+
+      <div id="register-form" style="display:none">
+        <input type="text" id="register-username" placeholder="Username" />
+        <input type="email" id="register-email" placeholder="Email" />
+        <input type="password" id="register-password" placeholder="Password" />
+        <button onclick="register()">Register</button>
+      </div>
+
+      <p id="auth-error" class="error"></p>
+    </div>
+  </div>
+
+  <!-- App Section -->
+  <div id="app-section" style="display:none">
+    <div class="app-container">
+      <div class="app-header">
+        <h1>My Tasks</h1>
+        <button onclick="logout()">Logout</button>
+      </div>
+
+      <div class="add-task">
+        <input type="text" id="task-title" placeholder="Task title" />
+        <input type="text" id="task-description" placeholder="Description (optional)" />
+        <button onclick="createTask()">Add Task</button>
+      </div>
+
+      <p id="task-error" class="error"></p>
+
+      <div id="tasks-list"></div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
